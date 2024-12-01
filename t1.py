@@ -46,11 +46,15 @@ selection_times = []
 insertion_times = []
 
 for size in sizes:
+  print(f'Iniciando para o tamanho {size}')
   arr = [random.randint(1, 10000) for _ in range(size)]
 
   bubble_times.append(measure_time(bubble_sort, arr.copy()))
+  print(f'Bubble sorteado para o tamanho {size}')
   selection_times.append(measure_time(selection_sort, arr.copy()))
+  print(f'Selection sorteado para o tamanho {size}')
   insertion_times.append(measure_time(insertion_sort, arr.copy()))
+  print(f'Insertion sorteado para o tamanho {size}')
 
 plt.figure(figsize=(10, 6))
 plt.plot(sizes, bubble_times, label="Bubble Sort", color='r')
